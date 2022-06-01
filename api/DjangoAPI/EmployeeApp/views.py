@@ -64,6 +64,6 @@ def employeeApi(request,id=0):
 
 @csrf_exempt
 def SaveFile(request):
-    file=request.FILES['file']
-    file_name=default_storage.save(file.name,file)
+    myfile=request.FILES['file']
+    file_name=default_storage.save(myfile.name,myfile)
     return JsonResponse(file_name,safe=False)
